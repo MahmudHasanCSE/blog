@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BiztroxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [BiztroxController::class, 'index'])->name('home');
+Route::get('/blog-category', [BiztroxController::class, 'category'])->name('blog-category');
+Route::get('/blog-detail', [BiztroxController::class, 'detail'])->name('blog-detail');
+Route::get('/blog-contact', [BiztroxController::class, 'contact'])->name('blog-contact');
