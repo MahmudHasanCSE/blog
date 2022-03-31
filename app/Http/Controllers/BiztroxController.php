@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class BiztroxController extends Controller
 {
-    //
-
     public function index()
     {
         return view('website.home.home');
@@ -21,10 +17,5 @@ class BiztroxController extends Controller
     public function detail()
     {
         return view('website.detail.detail');
-    }
-
-    public function contact()
-    {
-        return view('website.contact.contact');
     }
 }

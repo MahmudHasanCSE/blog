@@ -2,6 +2,7 @@
 <html lang="zxx">
 
 
+
 <head>
     <meta charset="utf-8">
     <title>BIZTROX</title>
@@ -30,8 +31,8 @@
     <link href="{{asset('/')}}website/css/style.css" rel="stylesheet">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="{{asset('/')}}website/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="{{asset('/')}}website/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('/')}}website/{{asset('/')}}website/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('/')}}/website/{{asset('/')}}website/images/favicon.png" type="image/x-icon">
 
 </head>
 
@@ -43,7 +44,6 @@
     <img src="{{asset('/')}}website/images/preloader.gif" alt="preloader">
 </div>
 <!-- preloader end -->
-
 <!-- navigation -->
 <header>
     <!-- top header -->
@@ -84,20 +84,19 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-
                         <li class="nav-item dropdown active">
                             <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{route('blog-category')}}">
                                 Blog Category
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('blog-contact')}}">Contact</a>
+                            <a class="nav-link" href="">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -105,7 +104,6 @@
         </div>
     </div>
 </header>
-
 <!-- Search Form -->
 <div class="search-form">
     <a href="#" class="close" id="searchClose">
@@ -126,9 +124,7 @@
     </div>
 </div>
 <!-- /navigation -->
-
 @yield('body')
-
 <!-- footer -->
 <footer class="bg-secondary">
     <div class="py-100 border-bottom" style="border-color: #454547 !important">
@@ -231,7 +227,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-5">
                     <p class="text-white text-center text-md-left">
-                        <span class="text-primary">B4NK4I</span> &copy; 2022 All Right Reserved</p>
+                        <span class="text-primary">Bizpro</span> &copy; 2017 All Right Reserved</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right">
@@ -258,7 +254,6 @@
     </div>
 </footer>
 <!-- /footer -->
-
 <!-- jQuery -->
 <script src="{{asset('/')}}website/plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
@@ -282,5 +277,6 @@
 <script src="{{asset('/')}}website/js/script.js"></script>
 
 </body>
+
 
 </html>

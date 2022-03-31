@@ -1,7 +1,6 @@
 @extends('master.admin.master')
 
 @section('body')
-
     <!-- start page title -->
     <div class="row">
         <div class="col-12">
@@ -19,5 +18,4 @@
         </div>
     </div>
     <!-- end page title -->
-
 @endsection

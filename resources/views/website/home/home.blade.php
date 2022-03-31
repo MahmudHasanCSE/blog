@@ -711,6 +711,4 @@
         </div>
     </section>
     <!-- /client logo slider -->
-
-
 @endsection

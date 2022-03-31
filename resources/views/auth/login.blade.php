@@ -55,16 +55,16 @@
                             </a>
                         </div>
                         <div class="p-2">
-                            <form class="form-horizontal" action="{{route('login')}}" method="post">
+                            <form class="form-horizontal" action="{{route('login')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="username">Email Address</label>
-                                    <input type="email" class="form-control" id="username" name="email" placeholder="Enter Email">
+                                    <input type="email" class="form-control" id="username" name="email" placeholder="Enter Email"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="userpassword">Password</label>
-                                    <input type="password" class="form-control" id="userpassword" name="password" placeholder="Enter password">
+                                    <input type="password" class="form-control" id="userpassword" name="password" placeholder="Enter password"/>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
@@ -75,6 +75,9 @@
                                 <div class="mt-3">
                                     <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
                                 </div>
+
+
+
 
 
                                 <div class="mt-4 text-center">
@@ -88,7 +91,7 @@
                 <div class="mt-5 text-center">
 
                     <div>
-                        <p>© {{date('Y')}} PWLFB3. Crafted with <i class="mdi mdi-heart text-danger"></i> by B3</p>
+                        <p>© {{date('Y')}} BITM SEIP. Crafted with <i class="mdi mdi-heart text-danger"></i> by PHP BATCH 3</p>
                     </div>
                 </div>
 

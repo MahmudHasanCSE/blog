@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    //
-
     private $category;
     private $categories;
 
@@ -20,7 +18,7 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         Category::newCategory($request);
-        return redirect()->back()->with('message', 'Category Information Created Successfully');
+        return redirect()->back()->with('message', 'Category information created successfully.');
     }
 
     public function manage()

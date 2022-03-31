@@ -15,7 +15,7 @@ class Category extends Model
     private static $imageUrl;
     private static $directory;
 
-    private static function getImageUrl($request)
+    public static function getImageUrl($request)
     {
         self::$image = $request->file('image');
         self::$imageName = self::$image->getClientOriginalName();
@@ -26,10 +26,12 @@ class Category extends Model
 
     public static function newCategory($request)
     {
-        self::$category = new Category();
-        self::$category->name = $request->name;
+        self::$category              = new Category();
+        self::$category->name        = $request->name;
         self::$category->description = $request->description;
-        self::$category->image = self::getImageUrl($request);
+        self::$category->image       = self::getImageUrl($request);
         self::$category->save();
     }
+
+
 }
