@@ -18,28 +18,36 @@ class Blog extends Model
 
     public static function getImageUrl($request)
     {
-        self::$image = $request->file('image');
+        self::$image     = $request->file('image');
         self::$imageName = self::$image->getClientOriginalName();
         self::$directory = 'blog-images/';
         self::$image->move(self::$directory, self::$imageName);
-        return self::$directory.self::$imageName;
+        self::$imageUrl  = self::$directory.self::$imageName;
+        return self::$imageUrl;
     }
 
     public static function newBlog($request)
     {
-        $authorId = Auth::user()->id;
+//        $authorId = Auth::user()->id;
         self::$blog                    = new Blog();
         self::$blog->category_id       = $request->category_id;
-        self::$blog->author_id         = $authorId;
+        self::$blog->author_id         = Auth::user()->id;
         self::$blog->main_title        = $request->main_title;
         self::$blog->sub_title         = $request->sub_title;
         self::$blog->short_description = $request->short_description;
         self::$blog->long_description  = $request->long_description;
         self::$blog->image             = self::getImageUrl($request);
-//        self::$blog->hit_count         = $request->hit_count;
-//        self::$blog->comment_count     = $request->comment_count;
-//        self::$blog->featured_status   = $request->featured_status;
-//        self::$blog->status            = $request->status;
+
         self::$blog->save();
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo('App\Models\User', 'author_id');
     }
 }

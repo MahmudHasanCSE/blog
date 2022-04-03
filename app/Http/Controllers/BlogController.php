@@ -21,13 +21,19 @@ class BlogController extends Controller
     public function create(Request $request)
     {
         Blog::newBlog($request);
-        return redirect()->back()->with('message', 'New blog created successfully.');
+        return redirect()->back()->with('message', 'Blog Information created successfully.');
     }
 
     public function manage()
     {
         $this->blogs = Blog::orderBy('id', 'desc')->get();
         return view('admin.blog.manage', ['blogs' => $this->blogs]);
+    }
+
+    public function detail($id)
+    {
+        $this->blog = Blog::find($id);
+        return view('admin.blog.detail', ['blog' => $this->blog]);
     }
 
     public function edit($id)
