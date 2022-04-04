@@ -24,7 +24,7 @@
                         </tr>
                         <tr>
                             <th>Blog Author</th>
-                            <td>{{$blog->author_id}}</td>
+                            <td>{{$blog->author->name}}</td>
                         </tr>
                         <tr>
                             <th>Blog Short Description</th>

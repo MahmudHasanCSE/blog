@@ -19,7 +19,7 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/', [BiztroxController::class, 'index'])->name('home');
 Route::get('/blog-category', [BiztroxController::class, 'category'])->name('blog-category');
-Route::get('/blog-detail', [BiztroxController::class, 'detail'])->name('blog-detail');
+Route::get('/blog-detail/{id}', [BiztroxController::class, 'detail'])->name('blog-detail');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
@@ -35,6 +35,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::post('/new-blog', [BlogController::class, 'create'])->name('blog.new');
     Route::get('/manage-blog', [BlogController::class, 'manage'])->name('blog.manage');
     Route::get('/detail-blog/{id}', [BlogController::class, 'detail'])->name('blog.detail');
+    Route::get('/status-blog/{id}', [BlogController::class, 'updateStatus'])->name('blog.status');
     Route::get('/edit-blog/{id}', [BlogController::class, 'edit'])->name('blog.edit');
     Route::post('/update-blog/{id}', [BlogController::class, 'update'])->name('blog.update');
     Route::get('/delete-blog/{id}', [BlogController::class, 'delete'])->name('blog.delete');

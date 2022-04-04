@@ -36,15 +36,33 @@ class BlogController extends Controller
         return view('admin.blog.detail', ['blog' => $this->blog]);
     }
 
+    public function updateStatus($id)
+    {
+        $this->blog = Blog::find($id);
+        if ($this->blog->status == 1)
+        {
+            $this->blog->status = 0;
+            $this->message = 'Blog Status Unpublished Successfully!';
+        }
+        else {
+            $this->blog->status = 1;
+            $this->message = 'Blog Status Published Successfully!';
+        }
+        $this->blog->save();
+        return redirect('/manage-blog')->with('message', $this->message);
+    }
+
     public function edit($id)
     {
         $this->blog = Blog::find($id);
-        return view('admin.blog.edit', ['blog' => $this->blog]);
+        $this->categories = Category::all();
+        return view('admin.blog.edit', ['blog' => $this->blog, 'categories' => $this->categories]);
     }
 
     public function update(Request $request, $id)
     {
-        return $request->all();
+        Blog::updateBlog($request, $id);
+        return redirect('/manage-blog')->with('message', 'Blog information updated successfully!');
     }
 
     public function delete($id)
