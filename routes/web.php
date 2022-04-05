@@ -18,8 +18,10 @@ use App\Http\Controllers\BlogController;
 */
 
 Route::get('/', [BiztroxController::class, 'index'])->name('home');
-Route::get('/blog-category', [BiztroxController::class, 'category'])->name('blog-category');
+Route::get('/blog-category/{id}', [BiztroxController::class, 'category'])->name('blog-category');
 Route::get('/blog-detail/{id}', [BiztroxController::class, 'detail'])->name('blog-detail');
+
+Route::get('/user-login', [BiztroxController::class, 'login'])->name('user-login');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');

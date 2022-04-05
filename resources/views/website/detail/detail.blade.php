@@ -245,6 +245,7 @@
                         </div>
                         <!-- comment form -->
                         <div>
+                            @if(Session::get('user_id'))
                             <h4>Add your comment:</h4>
                             <p class="mb-30">Your email address will not be published. Required fields are marked *</p>
                             <form action="#" class="row">
@@ -263,6 +264,9 @@
                                     <button class="btn btn-sm btn-primary" type="submit" value="send">Submit</button>
                                 </div>
                             </form>
+                            @else
+                            <h1>For Comment Please <a href="{{route('user-login')}}">Login</a></h1>
+                            @endif
                         </div>
                     </div>
                 </div>
